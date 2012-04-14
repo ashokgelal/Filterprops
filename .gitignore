@@ -1,0 +1,8 @@
+src/*/bin/
+FilterProps.Test/bin/
+src/*/obj/
+FilterProps.Test/obj/
+src/FilterProps/_ReSharper.FilterProps/
+src/FilterProps/packages/
+src/FilterProps/TestResults/
+FilterProps.Test/packages.config
