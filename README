@@ -1,0 +1,1 @@
+Filterprops is the reloaded version of FilterFramework. Basically, it allows you to filter a list of objects based on some object properties. FilterFramework requires you to pass strings, in form of expressions, to build filters. Filterprops, on the other hand, allows you to create strongly typed filter expression using fluent interface.
