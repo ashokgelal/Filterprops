@@ -9,19 +9,20 @@ namespace FilterProps
     {
         public Expression<Func<T, bool>> ItsExpression { get; private set; }
 
-        public void Add(IEnumerable<IFilterExpression<T>> filters)
-        {
-            foreach (var filter in filters)
-            {
-                AddToCollection(filter);
-            }
-        }
-
         private void AddToCollection(IFilterExpression<T> expression)
         {
-            if (ItsExpression == null)
-                ItsExpression = PredicateBuilderExtension.True<T>();
-            ItsExpression = ItsExpression.And(expression.ItsExpression);
+            if(expression.ItsDoAndFlag)
+            {
+                if (ItsExpression == null)
+                    ItsExpression = PredicateBuilderExtension.True<T>();
+                ItsExpression = ItsExpression.And(expression.ItsExpression);
+            }
+            else
+            {
+                if (ItsExpression == null)
+                    ItsExpression = PredicateBuilderExtension.False<T>();
+                ItsExpression = ItsExpression.Or(expression.ItsExpression);
+            }
             Add(expression);
         }
 
@@ -36,6 +37,14 @@ namespace FilterProps
         public void AddNewFilter(IFilterExpression<T> filter)
         {
             AddToCollection(filter);
+        }
+
+        public void Add(IEnumerable<IFilterExpression<T>> filters)
+        {
+            foreach (var filter in filters)
+            {
+                AddToCollection(filter);
+            }
         }
     }
 }

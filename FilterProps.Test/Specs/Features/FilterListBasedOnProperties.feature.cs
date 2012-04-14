@@ -103,7 +103,7 @@ namespace FilterProps.Test.Specs.Features
                         "Male",
                         "true"});
             table1.AddRow(new string[] {
-                        "Ashwaq Jawahir",
+                        "Ashwàq Jawahir",
                         "Shalhoub",
                         "Male",
                         "false"});
@@ -141,7 +141,7 @@ namespace FilterProps.Test.Specs.Features
                         "Boba",
                         "Bob Jackson",
                         "Female",
-                        "false"});
+                        "true"});
 #line 4
  testRunner.Given("These students:", ((string)(null)), table1);
 #line hidden
@@ -308,9 +308,55 @@ this.FeatureBackground();
                         "Boba",
                         "Bob Jackson",
                         "Female",
-                        "false"});
+                        "true"});
 #line 57
  testRunner.Then("These students should be on the list", ((string)(null)), table4);
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Filter students who are international")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Filter a list based on some properties")]
+        public virtual void FilterStudentsWhoAreInternational()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Filter students who are international", ((string[])(null)));
+#line 65
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 67
+ testRunner.And("I add a filter for international students");
+#line 68
+ testRunner.When("I apply the filters");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FirstName",
+                        "LastName",
+                        "Gender",
+                        "IsInternational"});
+            table5.AddRow(new string[] {
+                        "Elenor",
+                        "Ruel",
+                        "Female",
+                        "true"});
+            table5.AddRow(new string[] {
+                        "Hàn Ngọc",
+                        "Trai",
+                        "Female",
+                        "true"});
+            table5.AddRow(new string[] {
+                        "Mahjub Khalid",
+                        "Khalid",
+                        "Male",
+                        "true"});
+            table5.AddRow(new string[] {
+                        "Boba",
+                        "Bob Jackson",
+                        "Female",
+                        "true"});
+#line 69
+ testRunner.Then("These students should be on the list", ((string)(null)), table5);
 #line hidden
             this.ScenarioCleanup();
         }

@@ -29,5 +29,17 @@ namespace FilterProps
             _filterCollection.AddNewFilter(filter);
             return filter;
         }
+
+        public IFilterExpression<T> DoAndWith(Expression<Func<T, bool>> expression)
+        {
+            return AddBinaryFilter(expression);
+        }
+
+        public IFilterExpression<T> DoOrWith(Expression<Func<T, bool>> expression)
+        {
+            var filter = new BinaryFilterExpression<T>(expression) { ItsDoAndFlag = false };
+            _filterCollection.AddNewFilter(filter);
+            return filter;
+        }
     }
 }

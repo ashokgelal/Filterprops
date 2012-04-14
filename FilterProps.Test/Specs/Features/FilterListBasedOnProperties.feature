@@ -8,14 +8,14 @@ Background:
 		| Hàn Ngọc       | Trai        | Female | true            |
 		| Catherine      | Jackson     | Female | false           |
 		| Mahjub Khalid  | Khalid      | Male   | true            |
-		| Ashwaq Jawahir | Shalhoub    | Male   | false           |
+		| Ashwàq Jawahir | Shalhoub    | Male   | false           |
 		| Douglas        | Rego        | Male   | false           |
 		| Jose           | Kitterman   | Female | false           |
 		| Nancy          | Jackson     | Female | false           |
 		| Jose           | Roberts     | Male   | false           |
 		| Bob            | Jackson     | Male   | false           |
 		| Bobby          | Rackson     | Female | false           |
-		| Boba           | Bob Jackson | Female | false           |
+		| Boba           | Bob Jackson | Female | true            |
 
 Scenario Outline: Filter students that satisfies firstname
 	And I add a filter where FirstName is <FirstName>
@@ -60,4 +60,16 @@ Scenario: Filter students that contains common lastname
 		| Catherine | Jackson     | Female | false           |
 		| Nancy     | Jackson     | Female | false           |
 		| Bob       | Jackson     | Male   | false           |
-		| Boba      | Bob Jackson | Female | false           |
+		| Boba      | Bob Jackson | Female | true            |
+
+Scenario: Filter students who are international
+
+	And I add a filter for international students
+	When I apply the filters
+	Then These students should be on the list
+
+		| FirstName     | LastName    | Gender | IsInternational |
+		| Elenor        | Ruel        | Female | true            |
+		| Hàn Ngọc      | Trai        | Female | true            |
+		| Mahjub Khalid | Khalid      | Male   | true            |
+		| Boba          | Bob Jackson | Female | true            |

@@ -72,6 +72,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FilterListBasedOnProperties.feature</DependentUpon>
     </Compile>
+    <Compile Include="Specs\Features\MultipleAndedFilters.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleAndedFilters.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specs\Features\MultipleOredFilters.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleOredFilters.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specs\Steps\MultipleFilters.Steps.cs" />
+    <Compile Include="Specs\Steps\MultipleOredFilters.Steps.cs" />
     <Compile Include="Specs\Steps\AddFiltersToCollection.Steps.cs" />
     <Compile Include="Specs\Steps\ClearFilters.Steps.cs" />
     <Compile Include="Specs\Steps\FilterAList.Steps.cs" />
@@ -107,6 +119,14 @@
     <None Include="Specs\Features\FilterListBasedOnProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterListBasedOnProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specs\Features\MultipleAndedFilters.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MultipleAndedFilters.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specs\Features\MultipleOredFilters.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MultipleOredFilters.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

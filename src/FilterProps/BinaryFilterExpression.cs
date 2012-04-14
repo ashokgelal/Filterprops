@@ -8,7 +8,10 @@ namespace FilterProps
         public BinaryFilterExpression(Expression<Func<T, bool>> expression)
         {
             ItsExpression = expression;
+            ItsDoAndFlag = true;
         }
+
+        public bool ItsDoAndFlag { get; set; }
 
         public Expression<Func<T, bool>> ItsExpression { get; private set; }
     }

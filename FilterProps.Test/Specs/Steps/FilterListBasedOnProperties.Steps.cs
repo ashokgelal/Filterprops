@@ -118,5 +118,13 @@ namespace FilterProps.Test.Specs.Steps
             service.AddBinaryFilter(e => e.LastName.Contains("Jackson"));
             ScenarioContext.Current.Add("service", service);
         }
+
+        [Given(@"I add a filter for international students")]
+        public void GivenIAddAFilterForInternationalStudents()
+        {
+            var service = new FilterService<Student>();
+            service.AddBinaryFilter(e => e.IsInternational);
+            ScenarioContext.Current.Add("service", service);
+        }
     }
 }
