@@ -46,5 +46,19 @@ namespace FilterProps
                 AddToCollection(filter);
             }
         }
+
+        public void AndWith(FilterCollection<T> other)
+        {
+            if (ItsExpression == null)
+                ItsExpression = PredicateBuilderExtension.True<T>();
+            ItsExpression = ItsExpression.And(other.ItsExpression);
+        }
+
+        public void OrWith(FilterCollection<T> other)
+        {
+            if (ItsExpression == null)
+                ItsExpression = PredicateBuilderExtension.False<T>();
+            ItsExpression = ItsExpression.Or(other.ItsExpression);
+        }
     }
 }

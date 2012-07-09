@@ -30,6 +30,7 @@ namespace FilterProps
             return filter;
         }
 
+        // Convenient method for AddBinaryFilter
         public IFilterExpression<T> DoAndWith(Expression<Func<T, bool>> expression)
         {
             return AddBinaryFilter(expression);
@@ -40,6 +41,16 @@ namespace FilterProps
             var filter = new BinaryFilterExpression<T>(expression) { ItsDoAndFlag = false };
             _filterCollection.AddNewFilter(filter);
             return filter;
+        }
+
+        public void DoAndWith(FilterCollection<T> other)
+        {
+            _filterCollection.AndWith(other);
+        }
+
+        public void DoOrWith(FilterCollection<T> other)
+        {
+            _filterCollection.OrWith(other);
         }
     }
 }
