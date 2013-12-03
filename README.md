@@ -40,7 +40,6 @@ Say you have a list of students:
     // if you need an ORed filter instead:
     var orFilter = filterSevice.DoOrWith(e=>e.LastName == "Jackson");
     
-    
     // now you can apply the filters to students list:
     var filteredStudentsList = filterService.Filter(students);
 
@@ -57,7 +56,7 @@ You will do this like so:
     
     // create bunch of filters:
     var genderFilter = new BinaryFilterExpression<T>(e=>e.Gender == GenderEnum.Female); // ANDed by default
-    var ageFilter = new BinaryFilterExpression<T>(e=>e.Age > 27) { ItsDoAndFlag = false }; // ORed by setting     ItsDoAndFlag to false
+    var ageFilter = new BinaryFilterExpression<T>(e=>e.Age > 27) { ItsDoAndFlag = false }; // ORed by setting ItsDoAndFlag to false
     
     // add the filters to new collection:
     newFiltersCollection.Add(genderFilter);
@@ -68,4 +67,3 @@ You will do this like so:
     
     // create a new collection:
     var groupedFilteredStudentsList = filterService.Filter(students);
-
