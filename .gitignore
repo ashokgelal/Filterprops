@@ -5,6 +5,5 @@ FilterProps.Test/obj/
 src/FilterProps/_ReSharper.FilterProps/
 src/FilterProps/packages/
 src/FilterProps/TestResults/
-FilterProps.Test/packages.config
-src/FilterProps/FilterProps.v11.suo
 *.user
+*.suo
