@@ -20,7 +20,7 @@ namespace FilterProps
 
         public IEnumerable<T> Filter(IEnumerable<T> list)
         {
-            return _filterCollection.Count < 1 ? list : _filterCollection.ApplyFilter(list);
+            return _filterCollection.ApplyFilter(list);
         }
 
         public IFilterExpression<T> AddBinaryFilter(Expression<Func<T, bool>> expression)
