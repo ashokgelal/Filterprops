@@ -67,3 +67,6 @@ You will do this like so:
     
     // create a new collection:
     var groupedFilteredStudentsList = filterService.Filter(students);
+
+
+[![Build status](https://ci.appveyor.com/api/projects/status/v6n1g2m5k4dwph1j)](https://ci.appveyor.com/project/ashokgelal/filterprops)
